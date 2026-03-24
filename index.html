@@ -617,14 +617,97 @@
 
   .lesson-item strong { color: var(--dark); display: block; margin-bottom: 4px; }
 
+  /* ===== HAMBURGER BUTTON ===== */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+
+  .nav-toggle:hover { background: rgba(201,168,76,0.1); }
+
+  .nav-toggle span {
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
   /* ===== RESPONSIVE ===== */
-  @media (max-width: 640px) {
-    .nav-links button { font-size: 0.8rem; padding: 5px 8px; }
-    .nav-logo { font-size: 1.5rem; }
+  @media (max-width: 768px) {
+    nav { padding: 0 1.2rem; }
+
+    .nav-toggle { display: flex; }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 64px; right: 0; left: 0;
+      background: rgba(26,18,8,0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding: 1rem 1.2rem 1.4rem;
+      gap: 0.4rem;
+      z-index: 999;
+    }
+
+    .nav-links.open { display: flex; }
+
+    .nav-links button {
+      width: 100%;
+      text-align: right;
+      font-size: 1rem;
+      padding: 10px 16px;
+      border-radius: 12px;
+    }
+
+    .battles-grid {
+      grid-template-columns: 1fr;
+      padding: 1rem 1rem 3rem;
+    }
+
     .timeline-line { display: none; }
+    .timeline-container { padding: 1rem 1rem 3rem; }
     .timeline-item, .timeline-item:nth-child(even) { flex-direction: column; }
     .timeline-spacer { display: none; }
     .timeline-dot { display: none; }
+
+    .detail-body { padding: 1.2rem 1rem 3rem; }
+    .lessons-grid { grid-template-columns: 1fr 1fr; }
+
+    .chatbot-wrapper { padding: 1rem 1rem 3rem; }
+    .chat-info-banner { padding: 1rem 1.2rem; }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      padding: 1rem 1rem 3rem;
+    }
+
+    .hero-cards { gap: 0.7rem; }
+    .hero-card { min-width: 130px; padding: 1.2rem 1.2rem; }
+  }
+
+  @media (max-width: 480px) {
+    .nav-logo { font-size: 1.4rem; }
+    .hero { padding: 1.5rem 1rem; }
+    .section-header { padding: 2rem 1rem 0.5rem; }
+    .section-header h2 { font-size: 1.8rem; }
+    .lessons-grid { grid-template-columns: 1fr; }
+    .chat-input-area { gap: 0.5rem; }
+    .chat-send { padding: 0.9rem 1rem; font-size: 0.85rem; }
   }
 </style>
 </head>
@@ -633,7 +716,10 @@
 <!-- NAVBAR -->
 <nav>
   <div class="nav-logo">مريم <span>| سيرة النبي ﷺ</span></div>
-  <div class="nav-links">
+  <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="القائمة">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
     <button class="active" onclick="showPage('home')">🏠 الرئيسية</button>
     <button onclick="showPage('battles')">⚔️ الغزوات</button>
     <button onclick="showPage('timeline')">📅 السيرة</button>
@@ -877,6 +963,9 @@
 <script>
 // ===== NAVIGATION =====
 function showPage(id) {
+  // إغلاق القائمة على الموبايل
+  var t = document.getElementById("navToggle"), l = document.getElementById("navLinks");
+  if(t){ t.classList.remove("open"); l.classList.remove("open"); }
   // إخفاء صفحة تفاصيل الغزوة دائماً عند التنقل
   document.getElementById('battle-detail').style.display = 'none';
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -1372,6 +1461,24 @@ function copyQ(text) {
     setTimeout(() => { toast.style.display = 'none'; toast.textContent = '✅ تم النسخ — الصقه في الروبوت!'; }, 2500);
   });
 }
+
+// ===== HAMBURGER MENU =====
+function toggleNav() {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.classList.toggle('open');
+  links.classList.toggle('open');
+}
+
+function closeNav() {
+  document.getElementById('navToggle').classList.remove('open');
+  document.getElementById('navLinks').classList.remove('open');
+}
+
+document.addEventListener('click', function(e) {
+  const nav = document.querySelector('nav');
+  if (!nav.contains(e.target)) closeNav();
+});
 
 // ===== INIT =====
 renderBattles();
