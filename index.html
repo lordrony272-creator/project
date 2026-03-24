@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مريم | سيرة النبي ﷺ</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale: #F5EDD6;
+    --cream: #FAF7F0;
+    --dark: #1A1208;
+    --dark2: #2D2010;
+    --brown: #5C3D1E;
+    --green: #2D6A4F;
+    --green-light: #52B788;
+    --sand: #E9D8A6;
+    --text: #3D2B0F;
+    --white: #FFFDF7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ===== SCROLL ===== */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--cream); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    background: rgba(26,18,8,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: 'Amiri', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(201,168,76,0.5);
+  }
+
+  .nav-logo span { font-size: 0.9rem; color: var(--sand); font-family: 'Tajawal'; margin-right: 8px; }
+
+  .nav-links { display: flex; gap: 0.3rem; }
+
+  .nav-links button {
+    background: none; border: none; cursor: pointer;
+    color: var(--sand); font-family: 'Tajawal'; font-size: 0.95rem;
+    padding: 6px 14px; border-radius: 20px;
+    transition: all 0.3s;
+  }
+
+  .nav-links button:hover, .nav-links button.active {
+    background: var(--gold); color: var(--dark);
+    font-weight: 700;
+  }
+
+  /* ===== PAGES ===== */
+  .page { display: none; min-height: 100vh; padding-top: 64px; }
+  .page.active { display: block; animation: fadeIn 0.5s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== HOME PAGE ===== */
+  .hero {
+    min-height: calc(100vh - 64px);
+    background: linear-gradient(160deg, var(--dark) 0%, var(--dark2) 40%, #3D2B0F 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; position: relative; overflow: hidden;
+    padding: 2rem;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-ornament {
+    font-size: 4rem; color: var(--gold); opacity: 0.3;
+    margin-bottom: 1rem;
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%,100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.05); opacity: 0.5; }
+  }
+
+  .hero h1 {
+    font-family: 'Amiri', serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    color: var(--gold);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 40px rgba(201,168,76,0.4);
+  }
+
+  .hero .subtitle {
+    font-size: 1.1rem; color: var(--sand);
+    margin-bottom: 2.5rem; max-width: 600px; line-height: 1.8;
+  }
+
+  .hero-cards {
+    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+    max-width: 900px;
+  }
+
+  .hero-card {
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 16px; padding: 1.5rem 2rem;
+    cursor: pointer; transition: all 0.3s;
+    text-align: center; min-width: 160px;
+  }
+
+  .hero-card:hover {
+    background: rgba(201,168,76,0.18);
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(201,168,76,0.2);
+  }
+
+  .hero-card .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .hero-card .label { color: var(--sand); font-size: 0.95rem; font-weight: 500; }
+
+  .basmalah {
+    font-family: 'Amiri', serif;
+    font-size: 1.5rem; color: var(--gold-light);
+    margin-bottom: 1.5rem; opacity: 0.8;
+  }
+
+  /* ===== SECTION TITLE ===== */
+  .section-header {
+    text-align: center; padding: 3rem 2rem 1rem;
+  }
+
+  .section-header h2 {
+    font-family: 'Amiri', serif;
+    font-size: 2.5rem; color: var(--dark);
+    position: relative; display: inline-block;
+  }
+
+  .section-header h2::after {
+    content: '';
+    display: block; width: 60%; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0.5rem auto 0;
+  }
+
+  .section-header p { color: var(--brown); margin-top: 0.5rem; }
+
+  /* ===== BATTLES PAGE ===== */
+  .battles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem; padding: 1.5rem 2rem 3rem;
+    max-width: 1200px; margin: 0 auto;
+  }
+
+  .battle-card {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1px solid var(--sand);
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .battle-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    border-color: var(--gold);
+  }
+
+  .battle-card .card-top {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 100%);
+    padding: 1.2rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .battle-card .card-top .battle-year {
+    color: var(--gold); font-size: 0.85rem; font-weight: 700;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 3px 10px; border-radius: 20px;
+  }
+
+  .battle-card .card-top .star { font-size: 1.2rem; }
+
+  .battle-card .card-body { padding: 1.2rem 1.5rem; }
+
+  .battle-card h3 {
+    font-family: 'Amiri', serif;
+    font-size: 1.4rem; color: var(--dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .battle-card .location {
+    font-size: 0.85rem; color: var(--brown);
+    margin-bottom: 0.8rem;
+    display: flex; align-items: center; gap: 4px;
+  }
+
+  .battle-card p {
+    font-size: 0.9rem; color: var(--text);
+    line-height: 1.7; margin-bottom: 0.8rem;
+  }
+
+  .battle-card .result-badge {
+    display: inline-block;
+    padding: 3px 12px; border-radius: 20px;
+    font-size: 0.8rem; font-weight: 700;
+  }
+
+  .result-victory { background: #D4EDDA; color: #155724; }
+  .result-peace { background: #D1ECF1; color: #0C5460; }
+  .result-mixed { background: #FFF3CD; color: #856404; }
+  .result-defense { background: #F8D7DA; color: #721C24; }
+
+  /* ===== TIMELINE PAGE ===== */
+  .timeline-container {
+    max-width: 900px; margin: 0 auto;
+    padding: 1rem 2rem 3rem; position: relative;
+  }
+
+  .timeline-line {
+    position: absolute; right: 50%; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--gold) 5%, var(--gold) 95%, transparent);
+  }
+
+  .timeline-item {
+    display: flex; margin-bottom: 2rem;
+    align-items: flex-start; gap: 1.5rem;
+    position: relative;
+  }
+
+  .timeline-item:nth-child(even) { flex-direction: row-reverse; }
+
+  .timeline-content {
+    flex: 1;
+    background: var(--white);
+    border-radius: 14px;
+    border: 1px solid var(--sand);
+    padding: 1.2rem 1.5rem;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .timeline-content:hover {
+    border-color: var(--gold);
+    box-shadow: 0 8px 24px rgba(201,168,76,0.15);
+  }
+
+  .timeline-content h3 {
+    font-family: 'Amiri', serif;
+    font-size: 1.2rem; color: var(--dark);
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-content .year-tag {
+    display: inline-block;
+    background: var(--gold); color: var(--dark);
+    font-weight: 700; font-size: 0.8rem;
+    padding: 2px 10px; border-radius: 20px;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem; color: var(--text); line-height: 1.7;
+  }
+
+  .timeline-dot {
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--gold);
+    border: 3px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--gold);
+    flex-shrink: 0; margin-top: 1rem;
+    position: relative; z-index: 1;
+  }
+
+  .timeline-spacer { flex: 1; }
+
+  /* ===== CHATBOT PAGE ===== */
+  .chatbot-wrapper {
+    max-width: 780px; margin: 0 auto;
+    padding: 1.5rem 2rem 3rem;
+  }
+
+  .chat-info-banner {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 100%);
+    border-radius: 20px; padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .chat-info-banner .bot-avatar {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; flex-shrink: 0;
+  }
+
+  .chat-info-banner h3 { color: var(--gold); font-size: 1.2rem; margin-bottom: 4px; }
+  .chat-info-banner p { color: var(--sand); font-size: 0.85rem; line-height: 1.5; }
+
+  .chat-window {
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--sand);
+    min-height: 500px; max-height: 500px;
+    overflow-y: auto;
+    padding: 1.5rem;
+    display: flex; flex-direction: column; gap: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+
+  .msg {
+    display: flex; gap: 10px; align-items: flex-start;
+    animation: msgIn 0.3s ease;
+  }
+
+  @keyframes msgIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .msg.user { flex-direction: row-reverse; }
+
+  .msg-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0;
+  }
+
+  .msg.bot .msg-avatar { background: linear-gradient(135deg, var(--gold), var(--gold-light)); }
+  .msg.user .msg-avatar { background: linear-gradient(135deg, var(--green), var(--green-light)); }
+
+  .msg-bubble {
+    max-width: 75%; padding: 0.9rem 1.2rem;
+    border-radius: 18px; font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .msg.bot .msg-bubble {
+    background: var(--gold-pale);
+    border: 1px solid var(--sand);
+    color: var(--text);
+    border-top-right-radius: 4px;
+  }
+
+  .msg.user .msg-bubble {
+    background: linear-gradient(135deg, var(--dark), var(--dark2));
+    color: var(--sand);
+    border-top-left-radius: 4px;
+  }
+
+  .chat-suggestions {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .suggestion-btn {
+    background: var(--gold-pale);
+    border: 1px solid var(--gold);
+    color: var(--dark); font-family: 'Tajawal';
+    font-size: 0.85rem; padding: 6px 14px;
+    border-radius: 20px; cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .suggestion-btn:hover {
+    background: var(--gold); color: var(--dark);
+    transform: translateY(-2px);
+  }
+
+  .chat-input-area {
+    display: flex; gap: 0.8rem; margin-top: 1rem;
+  }
+
+  .chat-input {
+    flex: 1; padding: 0.9rem 1.2rem;
+    border: 2px solid var(--sand);
+    border-radius: 14px; background: var(--white);
+    font-family: 'Tajawal'; font-size: 0.95rem;
+    color: var(--text); outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .chat-input:focus { border-color: var(--gold); }
+
+  .chat-send {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border: none; cursor: pointer;
+    border-radius: 14px; padding: 0.9rem 1.5rem;
+    font-family: 'Tajawal'; font-weight: 700;
+    color: var(--dark); font-size: 0.95rem;
+    transition: all 0.2s; white-space: nowrap;
+  }
+
+  .chat-send:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(201,168,76,0.4); }
+  .chat-send:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  .typing-indicator {
+    display: flex; gap: 4px; align-items: center; padding: 4px 0;
+  }
+
+  .typing-indicator span {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--gold); display: inline-block;
+    animation: bounce 1.2s ease-in-out infinite;
+  }
+
+  .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+  .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes bounce {
+    0%,60%,100% { transform: translateY(0); }
+    30% { transform: translateY(-8px); }
+  }
+
+  /* ===== ABOUT PAGE ===== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; padding: 1.5rem 2rem 3rem;
+    max-width: 1100px; margin: 0 auto;
+  }
+
+  .info-card {
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--sand);
+    padding: 2rem;
+    transition: all 0.3s;
+  }
+
+  .info-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 12px 30px rgba(201,168,76,0.12);
+    transform: translateY(-4px);
+  }
+
+  .info-card .card-icon {
+    font-size: 2.2rem; margin-bottom: 1rem;
+  }
+
+  .info-card h3 {
+    font-family: 'Amiri', serif;
+    font-size: 1.4rem; color: var(--dark);
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--sand);
+  }
+
+  .info-card ul { list-style: none; }
+
+  .info-card ul li {
+    padding: 0.4rem 0;
+    font-size: 0.9rem; color: var(--text);
+    display: flex; align-items: baseline; gap: 8px;
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  .info-card ul li::before { content: '◆'; color: var(--gold); font-size: 0.5rem; flex-shrink: 0; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--dark);
+    text-align: center; padding: 2rem;
+    color: var(--sand); font-size: 0.85rem;
+    border-top: 1px solid rgba(201,168,76,0.2);
+  }
+
+  footer .footer-logo {
+    font-family: 'Amiri', serif;
+    font-size: 1.8rem; color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  /* ===== BATTLE DETAIL PAGE ===== */
+  #battle-detail { display: none; }
+  #battle-detail.active { display: block; animation: fadeIn 0.4s ease; }
+
+  .detail-hero {
+    background: linear-gradient(160deg, var(--dark) 0%, var(--dark2) 60%, #3D2B0F 100%);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center; position: relative; overflow: hidden;
+  }
+
+  .detail-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23C9A84C' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .back-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold); font-family: 'Tajawal';
+    font-size: 0.95rem; font-weight: 600;
+    padding: 8px 18px; border-radius: 24px;
+    cursor: pointer; transition: all 0.3s;
+    margin-bottom: 1.5rem; position: relative; z-index: 1;
+  }
+
+  .back-btn:hover {
+    background: var(--gold); color: var(--dark);
+    transform: translateX(4px);
+  }
+
+  .detail-hero h1 {
+    font-family: 'Amiri', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--gold); margin-bottom: 0.5rem;
+    position: relative; z-index: 1;
+    text-shadow: 0 0 30px rgba(201,168,76,0.3);
+  }
+
+  .detail-meta {
+    display: flex; flex-wrap: wrap; gap: 0.7rem;
+    justify-content: center; margin-top: 1rem;
+    position: relative; z-index: 1;
+  }
+
+  .detail-meta span {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(201,168,76,0.25);
+    color: var(--sand); font-size: 0.85rem;
+    padding: 5px 14px; border-radius: 20px;
+  }
+
+  .detail-body {
+    max-width: 860px; margin: 0 auto;
+    padding: 2rem 2rem 3rem;
+    display: grid; gap: 1.5rem;
+  }
+
+  .detail-section {
+    background: var(--white);
+    border-radius: 18px;
+    border: 1px solid var(--sand);
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+
+  .detail-section-header {
+    background: linear-gradient(135deg, var(--dark), var(--dark2));
+    padding: 1rem 1.5rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .detail-section-header h3 {
+    font-family: 'Amiri', serif;
+    font-size: 1.25rem; color: var(--gold);
+  }
+
+  .detail-section-header .sec-icon { font-size: 1.2rem; }
+
+  .detail-section-body { padding: 1.4rem 1.5rem; }
+
+  .detail-section-body p {
+    font-size: 0.95rem; line-height: 1.9; color: var(--text);
+  }
+
+  .detail-list { list-style: none; }
+  .detail-list li {
+    padding: 0.55rem 0;
+    font-size: 0.9rem; color: var(--text);
+    border-bottom: 1px solid var(--gold-pale);
+    display: flex; gap: 10px; align-items: baseline;
+    line-height: 1.6;
+  }
+  .detail-list li:last-child { border-bottom: none; }
+  .detail-list li::before { content: '◆'; color: var(--gold); font-size: 0.5rem; flex-shrink: 0; margin-top: 6px; }
+
+  .result-big {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 22px; border-radius: 30px;
+    font-size: 1rem; font-weight: 700;
+    margin-top: 0.5rem;
+  }
+
+  .lessons-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem; padding: 1.4rem 1.5rem;
+  }
+
+  .lesson-item {
+    background: var(--gold-pale);
+    border: 1px solid var(--sand);
+    border-radius: 12px; padding: 1rem;
+    font-size: 0.88rem; line-height: 1.6; color: var(--text);
+  }
+
+  .lesson-item strong { color: var(--dark); display: block; margin-bottom: 4px; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 640px) {
+    .nav-links button { font-size: 0.8rem; padding: 5px 8px; }
+    .nav-logo { font-size: 1.5rem; }
+    .timeline-line { display: none; }
+    .timeline-item, .timeline-item:nth-child(even) { flex-direction: column; }
+    .timeline-spacer { display: none; }
+    .timeline-dot { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">مريم <span>| سيرة النبي ﷺ</span></div>
+  <div class="nav-links">
+    <button class="active" onclick="showPage('home')">🏠 الرئيسية</button>
+    <button onclick="showPage('battles')">⚔️ الغزوات</button>
+    <button onclick="showPage('timeline')">📅 السيرة</button>
+    <button onclick="showPage('about')">🌙 عن النبي</button>
+    <button onclick="showPage('chat')" style="background:var(--gold);color:var(--dark);font-weight:700;">🤖 الروبوت</button>
+  </div>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="home" class="page active">
+  <div class="hero">
+    <div class="hero-ornament">✦</div>
+    <div class="basmalah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <h1>مريم</h1>
+    <p class="subtitle">
+      رحلة تفاعلية في سيرة خير البشر<br>
+      محمد بن عبدالله ﷺ
+    </p>
+    <div class="hero-cards">
+      <div class="hero-card" onclick="showPage('battles')">
+        <div class="icon">⚔️</div>
+        <div class="label">أهم الغزوات</div>
+      </div>
+      <div class="hero-card" onclick="showPage('timeline')">
+        <div class="icon">📜</div>
+        <div class="label">التسلسل الزمني</div>
+      </div>
+      <div class="hero-card" onclick="showPage('about')">
+        <div class="icon">🌙</div>
+        <div class="label">صفاته ﷺ</div>
+      </div>
+      <div class="hero-card" onclick="showPage('chat')" style="border-color:var(--gold);background:rgba(201,168,76,0.15)">
+        <div class="icon">🤖</div>
+        <div class="label">اسأل الروبوت الذكي</div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-logo">مريم</div>
+    <p>مشروع تعليمي تفاعلي عن سيرة النبي ﷺ</p>
+  </footer>
+</div>
+
+<!-- BATTLES PAGE -->
+<div id="battles" class="page">
+  <div class="section-header">
+    <h2>⚔️ أهم غزوات النبي ﷺ</h2>
+    <p>خرج النبي ﷺ في حوالي 27 غزوة، وقاتل في بعضها بنفسه الشريفة</p>
+  </div>
+  <div class="battles-grid" id="battlesGrid"></div>
+  <footer>
+    <div class="footer-logo">مريم</div>
+    <p>مشروع تعليمي تفاعلي عن سيرة النبي ﷺ</p>
+  </footer>
+</div>
+
+<!-- BATTLE DETAIL PAGE -->
+<div id="battle-detail">
+  <div style="padding-top:64px;">
+    <div class="detail-hero">
+      <button class="back-btn" onclick="closeBattleDetail()">→ العودة للغزوات</button>
+      <h1 id="detail-name"></h1>
+      <div class="detail-meta" id="detail-meta"></div>
+    </div>
+    <div class="detail-body" id="detail-body"></div>
+    <footer>
+      <div class="footer-logo">مريم</div>
+      <p>مشروع تعليمي تفاعلي عن سيرة النبي ﷺ</p>
+    </footer>
+  </div>
+</div>
+
+<!-- TIMELINE PAGE -->
+<div id="timeline" class="page">
+  <div class="section-header">
+    <h2>📜 التسلسل الزمني للسيرة النبوية</h2>
+    <p>من الميلاد المبارك حتى الوفاة</p>
+  </div>
+  <div class="timeline-container">
+    <div class="timeline-line"></div>
+    <div id="timelineItems"></div>
+  </div>
+  <footer>
+    <div class="footer-logo">مريم</div>
+    <p>مشروع تعليمي تفاعلي عن سيرة النبي ﷺ</p>
+  </footer>
+</div>
+
+<!-- ABOUT PAGE -->
+<div id="about" class="page">
+  <div class="section-header">
+    <h2>🌙 النبي محمد ﷺ</h2>
+    <p>صفاته وحياته ورسالته</p>
+  </div>
+  <div class="about-grid">
+    <div class="info-card">
+      <div class="card-icon">👤</div>
+      <h3>معلومات أساسية</h3>
+      <ul>
+        <li>الاسم: محمد بن عبدالله بن عبدالمطلب</li>
+        <li>الميلاد: 571 م (عام الفيل) في مكة المكرمة</li>
+        <li>الوفاة: 632 م في المدينة المنورة</li>
+        <li>القبيلة: قريش (بني هاشم)</li>
+        <li>الوالد: عبدالله (توفي قبل ولادته)</li>
+        <li>الوالدة: آمنة بنت وهب</li>
+        <li>المرضعة: حليمة السعدية</li>
+        <li>الكنية: أبو القاسم</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">✨</div>
+      <h3>صفاته الخَلقية</h3>
+      <ul>
+        <li>ربعة من الرجال (متوسط القامة)</li>
+        <li>وجهه كالقمر في بهائه</li>
+        <li>شعره أسود رجراج بين مسترسل ومجعد</li>
+        <li>عيناه سوداوتان واسعتان</li>
+        <li>أسنانه مفلجة بيضاء كالبرد</li>
+        <li>كتفاه عريضان</li>
+        <li>ختم النبوة بين كتفيه</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">💚</div>
+      <h3>صفاته الخُلقية</h3>
+      <ul>
+        <li>الصدق والأمانة (الصادق الأمين)</li>
+        <li>الرحمة بالخلق جميعاً</li>
+        <li>التواضع الشديد</li>
+        <li>الشجاعة الفائقة</li>
+        <li>الكرم والجود</li>
+        <li>الحلم والصبر</li>
+        <li>حسن الخلق والبشاشة</li>
+        <li>العدل بين الناس</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">📖</div>
+      <h3>أسماؤه ﷺ</h3>
+      <ul>
+        <li>محمد ﷺ</li>
+        <li>أحمد</li>
+        <li>الماحي (يمحو الله به الكفر)</li>
+        <li>الحاشر (يُحشر الناس على قدمه)</li>
+        <li>العاقب (آخر الأنبياء)</li>
+        <li>نبي الرحمة</li>
+        <li>نبي التوبة</li>
+        <li>المصطفى</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🕌</div>
+      <h3>مراحل الرسالة</h3>
+      <ul>
+        <li>نزول الوحي: 40 سنة (610 م)</li>
+        <li>الدعوة سراً: 3 سنوات</li>
+        <li>الدعوة جهراً: مكة (13 سنة)</li>
+        <li>الهجرة إلى المدينة: 622 م</li>
+        <li>بناء الدولة الإسلامية</li>
+        <li>فتح مكة: 630 م</li>
+        <li>حجة الوداع: 632 م</li>
+        <li>اكتمال الرسالة قبيل الوفاة</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">👨‍👩‍👧‍👦</div>
+      <h3>أزواجه وأبناؤه</h3>
+      <ul>
+        <li>خديجة بنت خويلد (أم أبنائه)</li>
+        <li>عائشة بنت أبي بكر (الصديقة)</li>
+        <li>حفصة بنت عمر</li>
+        <li>أبناؤه: القاسم، عبدالله، إبراهيم</li>
+        <li>بناته: زينب، رقية، أم كلثوم، فاطمة</li>
+        <li>لقب الزهراء: فاطمة الزهراء</li>
+      </ul>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-logo">مريم</div>
+    <p>مشروع تعليمي تفاعلي عن سيرة النبي ﷺ</p>
+  </footer>
+</div>
+
+<!-- CHATBOT PAGE -->
+<div id="chat" class="page">
+  <div class="section-header">
+    <h2>🤖 الروبوت</h2>
+    <p>اسألني عن سيرة النبي ﷺ وسأجيبك بإذن الله</p>
+  </div>
+  <div class="chatbot-wrapper">
+    <div class="chat-info-banner">
+      <div class="bot-avatar">🕌</div>
+      <div>
+        <h3>روبوت مريم الذكي</h3>
+        <p>مدرب على سيرة النبي ﷺ كاملة — الغزوات، الأحداث، الصفات، والأحكام. اسألني أي سؤال!</p>
+      </div>
+    </div>
+
+    <p style="font-size:0.85rem;color:var(--brown);margin-bottom:0.8rem;">💡 أسئلة مقترحة — اضغط لتنسخها:</p>
+    <div class="chat-suggestions">
+      <button class="suggestion-btn" onclick="copyQ('متى حدثت الهجرة؟')">متى حدثت الهجرة؟</button>
+      <button class="suggestion-btn" onclick="copyQ('ما هي أهم غزوات النبي ﷺ؟')">أهم الغزوات</button>
+      <button class="suggestion-btn" onclick="copyQ('ما هي صفات الرسول ﷺ؟')">صفات الرسول ﷺ</button>
+      <button class="suggestion-btn" onclick="copyQ('كم عدد زوجات النبي ﷺ؟')">زوجات النبي ﷺ</button>
+      <button class="suggestion-btn" onclick="copyQ('ما هي غزوة بدر الكبرى؟')">غزوة بدر</button>
+      <button class="suggestion-btn" onclick="copyQ('متى وُلد النبي ﷺ وأين؟')">ميلاد النبي ﷺ</button>
+    </div>
+
+    <div id="copyToast" style="display:none;background:var(--gold);color:var(--dark);padding:8px 18px;border-radius:20px;font-size:0.85rem;font-weight:700;text-align:center;margin-bottom:0.8rem;">
+      ✅ تم النسخ — الصقه في الروبوت!
+    </div>
+
+    <!-- زرار فتح الروبوت -->
+    <div style="text-align:center;padding:3rem 1rem;background:var(--white);border-radius:20px;border:2px solid var(--gold);margin-top:1rem;box-shadow:0 8px 30px rgba(201,168,76,0.1);">
+      <div style="font-size:3.5rem;margin-bottom:1rem;">🤖</div>
+      <h3 style="font-family:'Amiri',serif;font-size:1.6rem;color:var(--dark);margin-bottom:0.5rem;">روبوت مريم جاهز!</h3>
+      <p style="color:var(--brown);margin-bottom:2rem;font-size:0.95rem;line-height:1.7;">اضغط الزرار أدناه لتفتح المحادثة مع الروبوت<br>وهيجاوب على أي سؤال عن سيرة النبي ﷺ</p>
+      <button onclick="window.open('https://www.chatbase.co/chatbot-iframe/WwZ63MO1zs7QLbzkDS4Ap','_blank')" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));border:none;color:var(--dark);font-family:'Tajawal';font-size:1.1rem;font-weight:700;padding:14px 36px;border-radius:30px;cursor:pointer;box-shadow:0 6px 20px rgba(201,168,76,0.4);transition:all 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='none'">
+        💬 ابدأ المحادثة مع الروبوت
+      </button>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;margin-top:2rem;">
+        <span style="background:var(--gold-pale);border:1px solid var(--sand);padding:6px 14px;border-radius:20px;font-size:0.82rem;color:var(--text);">متى حدثت الهجرة؟</span>
+        <span style="background:var(--gold-pale);border:1px solid var(--sand);padding:6px 14px;border-radius:20px;font-size:0.82rem;color:var(--text);">ما هي غزوة بدر؟</span>
+        <span style="background:var(--gold-pale);border:1px solid var(--sand);padding:6px 14px;border-radius:20px;font-size:0.82rem;color:var(--text);">صفات الرسول ﷺ</span>
+        <span style="background:var(--gold-pale);border:1px solid var(--sand);padding:6px 14px;border-radius:20px;font-size:0.82rem;color:var(--text);">متى وُلد النبي ﷺ؟</span>
+      </div>
+    </div>
+
+  </div>
+  <footer>
+    <div class="footer-logo">مريم</div>
+    <p>مشروع تعليمي تفاعلي عن سيرة النبي ﷺ</p>
+  </footer>
+</div>
+
+<!-- CHATBASE EMBED -->
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="WwZ63MO1zs7QLbzkDS4Ap";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+<script>
+// ===== NAVIGATION =====
+function showPage(id) {
+  // إخفاء صفحة تفاصيل الغزوة دائماً عند التنقل
+  document.getElementById('battle-detail').style.display = 'none';
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const idx = ['home','battles','timeline','about','chat'].indexOf(id);
+  document.querySelectorAll('.nav-links button')[idx]?.classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// ===== BATTLE DETAIL =====
+function openBattleDetail(idx) {
+  // إخفاء كل الصفحات أولاً
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const b = battles[idx];
+  document.getElementById('detail-name').textContent = b.name;
+  document.getElementById('detail-meta').innerHTML = `
+    <span>📅 ${b.year}</span>
+    <span>📍 ${b.location}</span>
+    <span class="result-badge result-${b.type}" style="font-size:0.85rem;padding:5px 14px;">${b.result}</span>
+  `;
+  document.getElementById('detail-body').innerHTML = `
+    <div class="detail-section">
+      <div class="detail-section-header"><span class="sec-icon">📖</span><h3>نبذة عامة</h3></div>
+      <div class="detail-section-body"><p>${b.fullDesc}</p></div>
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-header"><span class="sec-icon">⚔️</span><h3>أبرز الأحداث</h3></div>
+      <div class="detail-section-body">
+        <ul class="detail-list">${b.events.map(e=>`<li>${e}</li>`).join('')}</ul>
+      </div>
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-header"><span class="sec-icon">🌟</span><h3>أبطال وشخصيات بارزة</h3></div>
+      <div class="detail-section-body">
+        <ul class="detail-list">${b.heroes.map(h=>`<li>${h}</li>`).join('')}</ul>
+      </div>
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-header"><span class="sec-icon">✨</span><h3>النتيجة والأثر</h3></div>
+      <div class="detail-section-body">
+        <span class="result-big result-${b.type}">${b.result}</span>
+        <p style="margin-top:1rem;">${b.impact}</p>
+      </div>
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-header"><span class="sec-icon">💡</span><h3>الدروس المستفادة</h3></div>
+      <div class="lessons-grid">${b.lessons.map(l=>`<div class="lesson-item"><strong>${l.title}</strong>${l.text}</div>`).join('')}</div>
+    </div>
+  `;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('battle-detail').style.display = 'block';
+  window.scrollTo(0,0);
+}
+
+function closeBattleDetail() {
+  document.getElementById('battle-detail').style.display = 'none';
+  showPage('battles');
+}
+
+// ===== BATTLES DATA =====
+const battles = [
+  {
+    name: 'غزوة بدر الكبرى ⭐',
+    year: '2 هـ / 624 م',
+    location: 'بدر — بين مكة والمدينة',
+    desc: 'أعظم غزوات الإسلام وأولى المعارك الكبرى. خرج فيها 313 مسلماً وواجهوا جيش قريش الذي يبلغ ألف مقاتل.',
+    result: 'نصر مبين للمسلمين',
+    type: 'victory', important: true,
+    fullDesc: 'غزوة بدر الكبرى هي أولى المعارك الفاصلة في الإسلام وأعظمها. جرت في السابع عشر من رمضان سنة 2 هـ. خرج النبي ﷺ بثلاثمائة وثلاثة عشر مقاتلاً لاعتراض قافلة قريش التجارية بقيادة أبي سفيان، إلا أن أبا سفيان نجح في تحويل مسار القافلة وأرسل يستنجد بقريش، فخرجت قريش بجيش يبلغ ألف مقاتل. واجه المسلمون هذا الجيش في وادي بدر بثقة في الله ونصر مبين.',
+    events: [
+      'خرج النبي ﷺ بـ 313 مقاتلاً من المسلمين لاعتراض قافلة أبي سفيان',
+      'تحوّل الأمر إلى مواجهة مع جيش قريش البالغ 1000 مقاتل',
+      'دعاء النبي ﷺ واستغاثته بربه في الليل قبل المعركة',
+      'نزول الملائكة نصرةً للمؤمنين كما أخبر القرآن الكريم',
+      'مقتل عدد من كبار قريش كأبي جهل وعتبة بن ربيعة',
+      'أسر سبعين من قريش وقتل سبعين آخرين',
+      'استشهاد 14 مسلماً فقط مقابل 70 قتيلاً من المشركين'
+    ],
+    heroes: [
+      'النبي محمد ﷺ — قائد المعركة والمصلي فيها',
+      'أبو بكر الصديق — المرافق والمستشار',
+      'علي بن أبي طالب — من أشجع المقاتلين',
+      'حمزة بن عبدالمطلب — أسد الله وأسد رسوله',
+      'معاذ بن عمرو ومعوذ بن عفراء — قاتلا أبا جهل'
+    ],
+    impact: 'كانت بدر نقطة التحول الكبرى في مسيرة الإسلام. رسّخت هيبة المسلمين في الجزيرة العربية وأثبتت أن النصر بيد الله لا بالعدد والعدة. نزلت فيها آيات كثيرة من سورة الأنفال تؤصل لمبادئ الجهاد والتوكل.',
+    lessons: [
+      { title: 'التوكل على الله', text: 'النصر بيد الله لا بالعدد والعتاد' },
+      { title: 'الشورى', text: 'استشار النبي ﷺ صحابته في اختيار مكان المعسكر' },
+      { title: 'الثبات', text: 'الصمود أمام العدو الأكبر عدداً بالإيمان' },
+      { title: 'الدعاء', text: 'استغاثة النبي ﷺ بربه طوال الليل قبل المعركة' }
+    ]
+  },
+  {
+    name: 'غزوة أُحد',
+    year: '3 هـ / 625 م',
+    location: 'جبل أُحد — المدينة المنورة',
+    desc: 'خرج المشركون بثلاثة آلاف مقاتل للانتقام من بدر. بدأ المسلمون بالنصر ثم تحول الموقف بسبب مخالفة الرماة.',
+    result: 'نتيجة متقلبة وتضحيات جسيمة',
+    type: 'mixed',
+    fullDesc: 'غزوة أحد من أعظم الابتلاءات التي مر بها المسلمون. خرج أبو سفيان بثلاثة آلاف مقاتل للانتقام من بدر، فواجههم النبي ﷺ بسبعمائة مقاتل عند جبل أحد. بدأت المعركة بنصر مبين للمسلمين، ولكن مخالفة الرماة لأوامر النبي ﷺ بترك مواقعهم أدت إلى انقلاب الموقف.',
+    events: [
+      'تشاور النبي ﷺ مع الصحابة في الخروج أو البقاء بالمدينة',
+      'توزيع المهام وتعيين 50 رامياً على جبل الرماة بأوامر صارمة بعدم المغادرة',
+      'انتصار المسلمين في بداية المعركة وفرار المشركين',
+      'مغادرة معظم الرماة مواقعهم ظناً بانتهاء المعركة',
+      'هجوم خالد بن الوليد من الخلف واستغلال الثغرة',
+      'استشهاد سيد الشهداء حمزة بن عبدالمطلب',
+      'إشاعة استشهاد النبي ﷺ وما سببه من ارتباك'
+    ],
+    heroes: [
+      'النبي محمد ﷺ — ثبت وجُرح ولم يفر',
+      'حمزة بن عبدالمطلب — سيد الشهداء استشهد في أحد',
+      'مصعب بن عمير — حامل اللواء حتى استشهد',
+      'أبو دجانة — قاتل ببسالة فائقة',
+      'نسيبة بنت كعب (أم عمارة) — دافعت عن النبي ﷺ'
+    ],
+    impact: 'كانت أحد درساً ربانياً عظيماً في أهمية الطاعة والانضباط. نزلت فيها آيات سورة آل عمران التي تحلل أسباب الابتلاء وتعلم المؤمنين كيف يستخلصون الدروس من الهزيمة الجزئية.',
+    lessons: [
+      { title: 'الطاعة', text: 'مخالفة الأوامر تكلف ثمناً باهظاً' },
+      { title: 'الثبات في الشدة', text: 'النبي ﷺ ثبت رغم الجرح والضائقة' },
+      { title: 'الشهادة', text: 'الشهيد يحيا عند ربه ويُغبط' },
+      { title: 'الحكمة من الابتلاء', text: 'الله يمحص المؤمنين ويرفع درجاتهم' }
+    ]
+  },
+  {
+    name: 'غزوة الخندق (الأحزاب)',
+    year: '5 هـ / 627 م',
+    location: 'شمال المدينة المنورة',
+    desc: 'تحالف أحزاب من قريش وغطفان وغيرهم وحاصروا المدينة. فكرة الخندق كانت من سلمان الفارسي.',
+    result: 'دفاع ناجح وانسحاب الأحزاب',
+    type: 'defense',
+    fullDesc: 'غزوة الخندق أو الأحزاب من أصعب الاختبارات التي مرت بها المدينة المنورة. تحالف أبو سفيان مع قبائل عديدة وجمعوا جيشاً يتجاوز عشرة آلاف مقاتل لاجتياح المدينة. اقترح سلمان الفارسي حفر خندق حول المدينة وهو تكتيك لم يعرفه العرب من قبل.',
+    events: [
+      'تحالف قريش وغطفان وبني النضير وغيرهم وجمع جيش ضخم',
+      'اقتراح سلمان الفارسي حفر الخندق وإقرار النبي ﷺ للفكرة',
+      'حفر الخندق في أيام معدودة بمشاركة النبي ﷺ بنفسه',
+      'حصار المدينة قرابة شهر دون اختراق الخندق',
+      'محاولة بني قريظة الغدر بالمسلمين من الداخل',
+      'إرسال الله ريحاً باردة وجنوداً من الملائكة لتفريق الأحزاب',
+      'انسحاب جيش الأحزاب خائباً دون تحقيق أي هدف'
+    ],
+    heroes: [
+      'سلمان الفارسي — صاحب فكرة الخندق الخلاقة',
+      'النبي ﷺ — اشترك في الحفر ورفع الروح المعنوية',
+      'نعيم بن مسعود — أحدث الفتنة بين الأحزاب وبني قريظة',
+      'علي بن أبي طالب — قاتل ببسالة في فتحات الخندق',
+      'الزبير بن العوام — حارية الرسول ﷺ'
+    ],
+    impact: 'أثبتت الخندق أن الدفاع الذكي يُعوّض قلة العدد. بعدها قال النبي ﷺ: "الآن نغزوهم ولا يغزوننا" — أي انتهى عصر الدفاع وبدأ عصر الهجوم والانتشار.',
+    lessons: [
+      { title: 'الابتكار والإبداع', text: 'أخذ الأفكار الجيدة من أي مصدر كان' },
+      { title: 'العمل الجماعي', text: 'حفر الخندق كان جهداً جماعياً منظماً' },
+      { title: 'الصبر في الشدة', text: 'شهر من الحصار والضيق ولم يستسلموا' },
+      { title: 'النصر الإلهي', text: 'الله أرسل الريح والجنود لنصرة المؤمنين' }
+    ]
+  },
+  {
+    name: 'فتح مكة ⭐',
+    year: '8 هـ / 630 م',
+    location: 'مكة المكرمة',
+    desc: 'أعظم أحداث السيرة النبوية. دخل النبي ﷺ مكة بعشرة آلاف مقاتل وعفا عن أهلها بقوله: اذهبوا فأنتم الطلقاء.',
+    result: 'فتح مبين وعفو عام',
+    type: 'victory', important: true,
+    fullDesc: 'فتح مكة هو تاج السيرة النبوية وأعظم أحداثها. في العاشر من رمضان سنة 8 هـ، تحرك النبي ﷺ بجيش عظيم قوامه عشرة آلاف مقاتل نحو مكة المكرمة. كان الفتح يسيراً بلا إراقة دماء تقريباً، وانتهى بالعفو التاريخي الذي يُضرب به المثل في الرحمة والسماحة.',
+    events: [
+      'نقض قريش لصلح الحديبية بمهاجمة حلفاء المسلمين',
+      'تحرك الجيش الإسلامي بسرية تامة نحو مكة',
+      'إسلام أبي سفيان قبيل الدخول وضمانه بالأمان',
+      'دخول الجيش من أربع جهات بقيادة النبي ﷺ والصحابة',
+      'تحطيم الأصنام حول الكعبة المشرفة وتطهيرها',
+      'العفو العام عن أهل مكة بقوله ﷺ: اذهبوا فأنتم الطلقاء',
+      'دخول الناس في دين الله أفواجاً'
+    ],
+    heroes: [
+      'النبي محمد ﷺ — قائد الفتح ومعلن العفو العام',
+      'أبو سفيان — أسلم قبيل الفتح وكان له دور في تيسيره',
+      'خالد بن الوليد — قاد أحد الأجنحة الأربعة',
+      'الزبير بن العوام — قاد جناحاً آخر',
+      'بلال بن رباح — أذّن على سطح الكعبة بعد الفتح'
+    ],
+    impact: 'فتح مكة نهاية لعصر الشرك في قلب الجزيرة العربية وبداية لانتشار الإسلام على نطاق واسع. العفو العام عن المستضعَفين من قِبَله ﷺ يُعدّ من أعظم مواقف الرحمة في تاريخ البشرية.',
+    lessons: [
+      { title: 'العفو والرحمة', text: 'العفو عن الأعداء يفتح القلوب ويُقوّي الأمة' },
+      { title: 'القوة الناعمة', text: 'الفتح تم بلا إراقة دماء تقريباً' },
+      { title: 'الوفاء', text: 'النبي ﷺ وفّى بوعده لمن دخل بيته أو المسجد' },
+      { title: 'التواضع', text: 'دخل ﷺ مكة خاشعاً لله لا متكبراً' }
+    ]
+  },
+  {
+    name: 'غزوة حنين',
+    year: '8 هـ / 630 م',
+    location: 'وادي حنين',
+    desc: 'بعد فتح مكة مباشرة. تفاجأ المسلمون بكمين من هوازن وثقيف ولكن النبي ﷺ ثبت وانتهت بنصر كامل.',
+    result: 'نصر بعد ابتلاء',
+    type: 'victory',
+    fullDesc: 'جرت غزوة حنين بعد أيام قليلة من فتح مكة. تجمّعت قبيلتا هوازن وثقيف بجيش ضخم وأعدّوا كميناً في وادي حنين. في البداية فوجئ المسلمون بالكمين وولّى بعضهم مدبرين، لكن النبي ﷺ ثبت في ميدان المعركة ونادى: "أنا النبي لا كذب، أنا ابن عبدالمطلب!" فالتف حوله أصحابه وانقلب الأمر لصالحهم.',
+    events: [
+      'خروج قبيلتي هوازن وثقيف بكل أموالهم وأولادهم للقتال',
+      'نصب الكمين في وادي حنين ومباغتة المسلمين عند الفجر',
+      'انسحاب بعض المسلمين في البداية مما أربك الصفوف',
+      'ثبات النبي ﷺ وصحابته الكرام وندائه الشهير',
+      'الرجوع المتدفق للمسلمين والتفافهم حول نبيهم',
+      'انتهاء المعركة بانتصار ساحق للمسلمين',
+      'غنائم عظيمة وأسرى كثيرة ثم عفو النبي ﷺ عنهم'
+    ],
+    heroes: [
+      'النبي ﷺ — الثابت في وجه الهزيمة المؤقتة',
+      'العباس بن عبدالمطلب — نادى المسلمين برجوعهم بصوته الجهوري',
+      'أبو سفيان بن الحارث — من الذين ثبتوا',
+      'أم سليم — حملت خنجراً وقاتلت دفاعاً عن النفس'
+    ],
+    impact: 'علّمت حنين درساً مهماً عن الغرور والاعتداد بالكثرة. نزل قوله تعالى: "ويوم حنين إذ أعجبتكم كثرتكم فلم تغن عنكم شيئاً". ثم جاء النصر الحقيقي بالتوكل على الله.',
+    lessons: [
+      { title: 'تجنب الغرور', text: 'الكثرة وحدها لا تصنع النصر' },
+      { title: 'الثبات في الشدة', text: 'ثبات القائد ينقذ الجيش كله' },
+      { title: 'الكرم', text: 'تنازل النبي ﷺ عن غنائمه للمؤلفة قلوبهم' },
+      { title: 'الإيمان فوق كل شيء', text: 'النصر جاء حين عادوا إلى ربهم' }
+    ]
+  },
+  {
+    name: 'غزوة تبوك',
+    year: '9 هـ / 631 م',
+    location: 'تبوك — شمال الجزيرة العربية',
+    desc: 'آخر غزوات النبي ﷺ بنفسه. خرج بجيش كبير لمواجهة الروم ولكن الروم لم يخرجوا، فعاد المسلمون سالمين.',
+    result: 'غزوة بدون قتال',
+    type: 'peace',
+    fullDesc: 'غزوة تبوك هي آخر الغزوات التي قادها النبي ﷺ بنفسه، وجرت في شهر رجب سنة 9 هـ. بلغ المسلمين أن الروم يجمعون جيشاً ضخماً لغزو المدينة، فقرر النبي ﷺ المبادرة والخروج بجيش كبير رغم شدة الحر وضيق الأحوال. وصل المسلمون إلى تبوك واحتلوا موضعاً استراتيجياً، لكن الروم لم يتحركوا.',
+    events: [
+      'تجميع جيش من ثلاثين ألف مقاتل في ظروف شديدة الصعوبة',
+      'تسابق الصحابة على الإنفاق وتجهيز جيش العسرة',
+      'إنفاق عثمان بن عفان ثلث جيش العسرة من ماله',
+      'خروج المنافقين بأعذار كاذبة والتخلف عن الجيش',
+      'عقد المعاهدات مع ملوك المنطقة دون قتال',
+      'مكوث الجيش عشرين يوماً في تبوك',
+      'العودة المظفرة إلى المدينة'
+    ],
+    heroes: [
+      'النبي ﷺ — قاد بنفسه رغم المشقة الشديدة',
+      'عثمان بن عفان — جهّز ثلث الجيش من ماله',
+      'أبو بكر الصديق — تصدق بكل ماله',
+      'عمر بن الخطاب — تصدق بنصف ماله',
+      'أبو خيثمة — لحق بالجيش تائباً بعد تخلفه'
+    ],
+    impact: 'أثبتت تبوك أن الدولة الإسلامية باتت قوة لا يُستهان بها حتى أمام الإمبراطورية الرومانية. كما كشفت عن المنافقين ونزلت فيها سورة التوبة بأحكام مفصّلة.',
+    lessons: [
+      { title: 'البذل في سبيل الله', text: 'الصحابة تسابقوا على الإنفاق رغم الشدة' },
+      { title: 'الردع', text: 'القوة تمنع الحرب أحياناً بدون قتال' },
+      { title: 'الصدق مع الله', text: 'الثلاثة الذين خُلّفوا تابوا وقُبلت توبتهم' },
+      { title: 'التخطيط الاستراتيجي', text: 'المبادرة خير من الانتظار في مواجهة الأعداء' }
+    ]
+  },
+  {
+    name: 'غزوة الحديبية',
+    year: '6 هـ / 628 م',
+    location: 'الحديبية — قرب مكة',
+    desc: 'خرج النبي ﷺ معتمراً فصده المشركون، فانتهت بصلح مشهور أتاح انتشار الإسلام على نطاق واسع.',
+    result: 'صلح وليس قتالاً — فتح مبين',
+    type: 'peace',
+    fullDesc: 'خرج النبي ﷺ في ذي القعدة سنة 6 هـ بألف وأربعمائة من الصحابة قاصداً مكة للعمرة، لا للقتال. صدّه المشركون عند الحديبية. تفاوض الطرفان وانتهى الأمر بصلح بدا للوهلة الأولى مجحفاً بحق المسلمين، لكن الله سمّاه فتحاً مبيناً لأنه فتح باب الدعوة على مصراعيه.',
+    events: [
+      'خروج النبي ﷺ بـ 1400 صحابي معتمرين بلا سلاح قتال',
+      'صدّ قريش لهم وإرسال المفاوضين',
+      'بيعة الرضوان تحت الشجرة إعلاناً للوقوف خلف النبي ﷺ',
+      'توقيع الصلح بشروطه المتعددة بينها هدنة عشر سنوات',
+      'عودة المسلمين دون أداء العمرة ذلك العام',
+      'تساؤل بعض الصحابة عن حكمة الصلح',
+      'نزول قوله تعالى: "إنا فتحنا لك فتحاً مبيناً"'
+    ],
+    heroes: [
+      'النبي ﷺ — الحكمة والبُعد النظري في قبول الصلح',
+      'عثمان بن عفان — سفير النبي ﷺ إلى مكة',
+      'عمر بن الخطاب — شارك بصراحة ثم فهم الحكمة',
+      'سهيل بن عمرو — مفاوض قريش'
+    ],
+    impact: 'فتحت الهدنة باب التواصل بين الناس والمسلمين بحرية. في العامين التاليين أسلم خلق كثير بما فيهم خالد بن الوليد وعمرو بن العاص. كان ثمرة الصلح هي الفتح الأكبر: فتح مكة.',
+    lessons: [
+      { title: 'البُعد الاستراتيجي', text: 'ما يبدو هزيمة قد يكون انتصاراً كبيراً' },
+      { title: 'الحلم والصبر', text: 'قبول المرّ الآن لجني الثمر لاحقاً' },
+      { title: 'الطاعة', text: 'الصحابة أطاعوا رغم تساؤلاتهم الداخلية' },
+      { title: 'الدبلوماسية', text: 'الحوار والتفاوض أداة فاعلة في الإسلام' }
+    ]
+  },
+  {
+    name: 'غزوة خيبر',
+    year: '7 هـ / 629 م',
+    location: 'خيبر — شمال المدينة',
+    desc: 'فتح النبي ﷺ حصون اليهود في خيبر وكان فتح حصن القموص بطولة علي بن أبي طالب.',
+    result: 'فتح وانتصار',
+    type: 'victory',
+    fullDesc: 'غزوة خيبر وقعت في المحرم سنة 7 هـ إثر صلح الحديبية. كانت خيبر حصوناً منيعة يسكنها يهود بني النضير وغيرهم ويخططون للإضرار بالمسلمين. فتحها النبي ﷺ حصناً حصناً في معارك امتدت أياماً.',
+    events: [
+      'تحرك الجيش نحو خيبر سراً في الليل',
+      'مباغتة أهل خيبر فجراً فوجدوهم يحملون معاولهم للخروج للعمل',
+      'حصار الحصون الواحد تلو الآخر',
+      'إعطاء النبي ﷺ الراية لعلي بن أبي طالب',
+      'فتح حصن القموص — أمنع الحصون — على يد علي',
+      'قصة مرحب اليهودي ومبارزة علي له',
+      'اتفاق ترك اليهود يعملون الأرض مقابل نصف المحصول'
+    ],
+    heroes: [
+      'النبي ﷺ — أصيب بمفعول سُم وضعته امرأة يهودية ومع ذلك عفا',
+      'علي بن أبي طالب — فتح أمنع الحصون وقتل مرحب',
+      'محمد بن مسلمة — قائد ميداني بارز'
+    ],
+    impact: 'أمّنت خيبر الجهة الشمالية للمدينة وأتاحت موارد اقتصادية للمسلمين. كذلك جاء فيها جعفر بن أبي طالب عائداً من الحبشة وأسلمت صفية بنت حيي.',
+    lessons: [
+      { title: 'الشجاعة', text: 'مواجهة الحصون المنيعة بعزيمة وإيمان' },
+      { title: 'الرحمة', text: 'عفا النبي ﷺ عمن سمّته' },
+      { title: 'الكفاءة', text: 'منح الراية لصاحب الكفاءة لا للمنصب' },
+      { title: 'التخطيط', text: 'السرية والمباغتة عامل حاسم في النجاح' }
+    ]
+  },
+  {
+    name: 'غزوة بني قريظة',
+    year: '5 هـ / 627 م',
+    location: 'المدينة المنورة',
+    desc: 'بعد غزوة الخندق مباشرة. حاصر النبي ﷺ بني قريظة بسبب نقضهم العهد أثناء الحصار.',
+    result: 'تسليم بني قريظة',
+    type: 'victory',
+    fullDesc: 'بعد انسحاب الأحزاب من الخندق مباشرة، أمر النبي ﷺ بالتوجه لبني قريظة الذين نقضوا عهدهم أثناء الحصار وتحالفوا مع الأحزاب. حاصرهم المسلمون خمساً وعشرين يوماً حتى استسلموا.',
+    events: [
+      'إعلان النبي ﷺ التوجه لبني قريظة فور انسحاب الأحزاب',
+      'حصار دام 25 يوماً',
+      'استسلام بني قريظة وطلبهم التحكيم من سعد بن معاذ',
+      'قبول المسلمين وبني قريظة بحكم سعد',
+      'حكم سعد بن معاذ وفق أحكام التوراة ذاتها'
+    ],
+    heroes: [
+      'النبي ﷺ — أدار الحصار بحكمة',
+      'سعد بن معاذ — الحكم المقبول من الطرفين',
+      'علي بن أبي طالب — قاد مقدمة الجيش'
+    ],
+    impact: 'أمّن الجانب الداخلي للمدينة من الخيانة. كانت بني قريظة آخر حصن يهودي داخل المدينة، وبزوالها تفرغ المسلمون للامتداد خارجها.',
+    lessons: [
+      { title: 'العهد مقدس', text: 'نقض العهد في وقت الحرب عقوبته صارمة' },
+      { title: 'الحزم', text: 'التعامل الحازم مع الخيانة يحمي المجتمع' },
+      { title: 'العدل', text: 'التحكيم بما يوافق شريعة المحكَّم بينهم أنفسهم' },
+      { title: 'السرعة', text: 'الحسم الفوري بعد الخندق منع التفكير في ثأر' }
+    ]
+  },
+  {
+    name: 'غزوة بدر الأولى (سفوان)',
+    year: '2 هـ / 623 م',
+    location: 'قرب بدر',
+    desc: 'من أوائل الغزوات، خرج النبي ﷺ لملاحقة كرز بن جابر الفهري الذي أغار على مواشي المدينة.',
+    result: 'عاد دون قتال',
+    type: 'mixed',
+    fullDesc: 'تُعدّ غزوة بدر الأولى (أو غزوة سفوان) من أوائل الغزوات التي خرج فيها النبي ﷺ بنفسه. أغار كرز بن جابر الفهري على مواشي المدينة المنورة فخرج النبي ﷺ في طلبه وصل إلى وادي سفوان قرب بدر إلا أن كرزاً استطاع الإفلات.',
+    events: [
+      'إغارة كرز بن جابر على مواشي المدينة',
+      'خروج النبي ﷺ فوراً في 70 مقاتلاً',
+      'الوصول إلى وادي سفوان قرب بدر',
+      'إفلات كرز دون اشتباك',
+      'عودة الجيش سالماً للمدينة'
+    ],
+    heroes: [
+      'النبي ﷺ — أبدى حزماً فورياً في الرد على الاعتداء',
+      'سعد بن أبي وقاص — من المشاركين في هذه الغزوة'
+    ],
+    impact: 'أظهرت للمشركين أن المسلمين لن يصبروا على الاعتداء وأنهم قادرون على الردع والتحرك السريع.',
+    lessons: [
+      { title: 'الردع السريع', text: 'الرد الفوري على الاعتداء يمنع تكراره' },
+      { title: 'المبادرة', text: 'لا انتظار عند الاعتداء على الحقوق' },
+      { title: 'التنظيم', text: 'الخروج المنظم رغم قلة التحضير' }
+    ]
+  },
+  {
+    name: 'غزوة بني المصطلق',
+    year: '5 هـ / 627 م',
+    location: 'المريسيع',
+    desc: 'أُغير على بني المصطلق بعد بلوغ خبر تجمعهم. وفيها حدثت قصة الإفك والبراءة.',
+    result: 'نصر سريع',
+    type: 'victory',
+    fullDesc: 'غزوة بني المصطلق أو المريسيع وقعت في شعبان سنة 5 هـ. بلغ النبي ﷺ أن الحارث بن أبي ضرار زعيم بني المصطلق يجمع قومه لغزو المسلمين، فبادر النبي ﷺ وأغار عليهم. وفي عودة هذه الغزوة حدثت قصة الإفك الشهيرة.',
+    events: [
+      'ورود خبر تجمع بني المصطلق لمهاجمة المسلمين',
+      'خروج الجيش الإسلامي سريعاً',
+      'المباغتة عند ماء المريسيع وانتصار المسلمين بسرعة',
+      'وقوع فتنة بين رجل من المهاجرين وآخر من الأنصار',
+      'زواج النبي ﷺ من جويرية بنت الحارث',
+      'قصة الإفك وبراءة عائشة رضي الله عنها بنص القرآن'
+    ],
+    heroes: [
+      'النبي ﷺ — المبادرة وحسن التصرف في الفتنة الداخلية',
+      'عائشة رضي الله عنها — صبرت حتى أنزل الله براءتها',
+      'أبو أيوب الأنصاري وزوجته — رفضا تصديق الإشاعة'
+    ],
+    impact: 'براءة عائشة رضي الله عنها نزلت آيات قرآنية محكمة تؤصل أحكام القذف وتحصين الأعراض — تشريع دائم إلى قيام الساعة.',
+    lessons: [
+      { title: 'المبادرة', text: 'الهجوم خير وسيلة للدفاع أحياناً' },
+      { title: 'التثبت', text: 'لا تصديق الإشاعة بلا دليل' },
+      { title: 'الصبر', text: 'الصبر على الظلم ينتهي بالنصر والبراءة' },
+      { title: 'وحدة الصف', text: 'الفتنة الداخلية أخطر من العدو الخارجي' }
+    ]
+  },
+  {
+    name: 'غزوة الطائف',
+    year: '8 هـ / 630 م',
+    location: 'الطائف',
+    desc: 'بعد غزوة حنين تحصّن ثقيف في الطائف فحاصرهم النبي ﷺ ثم رفع الحصار ودعا لهم بالهداية.',
+    result: 'حصار رُفع برحمة',
+    type: 'mixed',
+    fullDesc: 'بعد انتصار حنين لجأت فلول هوازن وثقيف إلى الطائف وتحصنوا في حصونها المنيعة. حاصرهم النبي ﷺ بضعة عشر يوماً واستخدم المنجنيق للمرة الأولى في الإسلام، ثم رفع الحصار دون فتح الحصن ودعا لهم بالهداية.',
+    events: [
+      'لجوء ثقيف وبقية هوازن إلى الطائف بعد حنين',
+      'تحرك الجيش الإسلامي لحصار الطائف',
+      'استخدام المنجنيق لأول مرة في الإسلام',
+      'صعوبة اختراق الحصون والخسائر في صفوف المسلمين',
+      'قرار رفع الحصار بعد 18-40 يوماً',
+      'دعاء النبي ﷺ: "اللهم اهدِ ثقيفاً"',
+      'إسلام ثقيف بعد عام واحد فقط'
+    ],
+    heroes: [
+      'النبي ﷺ — رفع الحصار بحكمة ودعا للأعداء بالهداية',
+      'سعيد بن عبيد — من قادة الحصار',
+      'خالد بن الوليد — أشار بالانسحاب لصعوبة الفتح'
+    ],
+    impact: 'أثمر دعاء النبي ﷺ في العام التالي حين أسلمت ثقيف كاملة وهدمت اللات أعظم أصنامها. الرحمة والدعاء أجدى أحياناً من السيف.',
+    lessons: [
+      { title: 'الحكمة', text: 'الانسحاب التكتيكي أحياناً أفضل من الإصرار' },
+      { title: 'الدعاء', text: 'الدعاء للأعداء بالهداية سنة نبوية' },
+      { title: 'الرحمة', text: 'لم يكن هدفه الإبادة بل الهداية' },
+      { title: 'الصبر الاستراتيجي', text: 'المؤمن يصبر وينتظر الثمرة' }
+    ]
+  }
+];
+
+function renderBattles() {
+  const grid = document.getElementById('battlesGrid');
+  grid.innerHTML = battles.map((b, idx) => `
+    <div class="battle-card" onclick="openBattleDetail(${idx})" style="cursor:pointer;">
+      <div class="card-top">
+        <span class="battle-year">${b.year}</span>
+        <span class="star">${b.important ? '⭐' : '⚔️'}</span>
+      </div>
+      <div class="card-body">
+        <h3>${b.name}</h3>
+        <div class="location">📍 ${b.location}</div>
+        <p>${b.desc}</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.8rem;">
+          <span class="result-badge result-${b.type}">${b.result}</span>
+          <span style="font-size:0.8rem;color:var(--gold);font-weight:600;">اقرأ التفاصيل ←</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===== TIMELINE DATA =====
+const timelineEvents = [
+  { year: '571 م', title: 'الميلاد المبارك', desc: 'وُلد النبي محمد ﷺ في مكة المكرمة عام الفيل، في بني هاشم من قريش، يوم الإثنين 12 ربيع الأول.' },
+  { year: '576 م', title: 'وفاة أمه', desc: 'توفيت والدته آمنة بنت وهب وهو في السادسة من عمره، فكفله جده عبدالمطلب.' },
+  { year: '578 م', title: 'وفاة جده', desc: 'توفي جده عبدالمطلب فانتقلت كفالته إلى عمه أبي طالب الذي أحبه وحماه.' },
+  { year: '595 م', title: 'الزواج من خديجة', desc: 'تزوج النبي ﷺ في الخامسة والعشرين من السيدة خديجة بنت خويلد رضي الله عنها.' },
+  { year: '610 م', title: 'بداية الوحي', desc: 'نزل جبريل عليه السلام في غار حراء وأنزل أول آيات القرآن: "اقرأ باسم ربك الذي خلق".' },
+  { year: '613 م', title: 'الدعوة الجهرية', desc: 'أُمر النبي ﷺ بالجهر بالدعوة فصدع بها وواجه الأذى والمقاومة من قريش.' },
+  { year: '619 م', title: 'عام الحزن', desc: 'توفيت خديجة رضي الله عنها وعمه أبو طالب في عام واحد، فاشتد الأذى على المسلمين.' },
+  { year: '622 م', title: 'الهجرة إلى المدينة', desc: 'هاجر النبي ﷺ وصحابته إلى المدينة المنورة، وهذا هو التاريخ الذي يبدأ منه التقويم الهجري.' },
+  { year: '624 م', title: 'غزوة بدر الكبرى', desc: 'أول المعارك الكبرى. انتصر المسلمون بعون الله رغم قلة عددهم على جيش قريش.' },
+  { year: '625 م', title: 'غزوة أُحد', desc: 'ابتُلي المسلمون في هذه المعركة بعد مخالفة الرماة أوامر النبي ﷺ، واستشهد سيد الشهداء حمزة.' },
+  { year: '627 م', title: 'غزوة الخندق', desc: 'تحالفت الأحزاب على المدينة فحفر المسلمون الخندق وصمدوا حتى أرسل الله الريح وجنوده.' },
+  { year: '628 م', title: 'صلح الحديبية', desc: 'صلح مع قريش رآه بعض الصحابة غير مواتٍ لكنه كان فتحاً مبيناً مهّد لانتشار الإسلام.' },
+  { year: '630 م', title: 'فتح مكة العظيم', desc: 'دخل النبي ﷺ مكة فاتحاً منتصراً وعفا عن أهلها قائلاً: اذهبوا فأنتم الطلقاء.' },
+  { year: '632 م', title: 'حجة الوداع', desc: 'أدى النبي ﷺ فريضة الحج وخطب خطبة الوداع التاريخية أمام مئة ألف صحابي.' },
+  { year: '632 م', title: 'الوفاة الشريفة', desc: 'انتقل النبي ﷺ إلى الرفيق الأعلى في المدينة المنورة في 12 ربيع الأول سنة 11 هـ.' },
+];
+
+function renderTimeline() {
+  const container = document.getElementById('timelineItems');
+  container.innerHTML = timelineEvents.map((e, i) => `
+    <div class="timeline-item">
+      ${i % 2 === 0 ? `<div class="timeline-content"><span class="year-tag">${e.year}</span><h3>${e.title}</h3><p>${e.desc}</p></div>` : '<div class="timeline-spacer"></div>'}
+      <div class="timeline-dot"></div>
+      ${i % 2 !== 0 ? `<div class="timeline-content"><span class="year-tag">${e.year}</span><h3>${e.title}</h3><p>${e.desc}</p></div>` : '<div class="timeline-spacer"></div>'}
+    </div>
+  `).join('');
+}
+
+// ===== CHATBOT =====
+// ===== CHATBOT - نسخ السؤال للكليبورد =====
+function copyQ(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    const toast = document.getElementById('copyToast');
+    toast.style.display = 'block';
+    setTimeout(() => toast.style.display = 'none', 2000);
+  }).catch(() => {
+    // fallback لو clipboard مش متاح
+    const toast = document.getElementById('copyToast');
+    toast.textContent = '💡 انسخ السؤال يدوياً واكتبه في الروبوت';
+    toast.style.display = 'block';
+    setTimeout(() => { toast.style.display = 'none'; toast.textContent = '✅ تم النسخ — الصقه في الروبوت!'; }, 2500);
+  });
+}
+
+// ===== INIT =====
+renderBattles();
+renderTimeline();
+</script>
+</body>
+</html>
